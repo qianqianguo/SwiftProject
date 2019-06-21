@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         static func makeDefault() -> AppDelegateType {
             
             return CompositeAppDelegate(appDelegates: [
+                ViewControllerDelegate(),
                 PushNotificationsAppDelegate(),
                 ThirdPartiesConfiguratorAppDelegate(),
                 ]
@@ -29,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
-        let root  = JHBaseTabBarController()
-        self.window?.rootViewController = root
-        self.window?.makeKeyAndVisible()
 
         return true
     }

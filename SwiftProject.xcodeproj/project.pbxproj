@@ -14,6 +14,8 @@
 		95064ECD22BC855A00B2DF48 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95064ECC22BC855A00B2DF48 /* MianViewModel.swift */; };
 		95064ED122BCA89300B2DF48 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95064ECF22BCA89300B2DF48 /* MainCollectionViewCell.swift */; };
 		95064ED222BCA89300B2DF48 /* MainCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95064ED022BCA89300B2DF48 /* MainCollectionViewFlowLayout.swift */; };
+		95064ED522BCAD4100B2DF48 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95064ED422BCAD4100B2DF48 /* ViewControllerDelegate.swift */; };
+		95064ED822BCAED200B2DF48 /* Swizzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95064ED722BCAED200B2DF48 /* Swizzer.swift */; };
 		950C9D4522BB728E0032F43F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4422BB728E0032F43F /* API.swift */; };
 		950C9D4722BB74360032F43F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4622BB74360032F43F /* Macros.swift */; };
 		950C9D4922BB78520032F43F /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */; };
@@ -76,6 +78,8 @@
 		95064ECC22BC855A00B2DF48 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
 		95064ECF22BCA89300B2DF48 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		95064ED022BCA89300B2DF48 /* MainCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		95064ED422BCAD4100B2DF48 /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
+		95064ED722BCAED200B2DF48 /* Swizzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzer.swift; sourceTree = "<group>"; };
 		950C9D4422BB728E0032F43F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		950C9D4622BB74360032F43F /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
@@ -211,6 +215,15 @@
 			path = "首页";
 			sourceTree = "<group>";
 		};
+		95064ED622BCAE1700B2DF48 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				950C9D4422BB728E0032F43F /* API.swift */,
+				950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		9584A34222BA0AF600DCECDB = {
 			isa = PBXGroup;
 			children = (
@@ -288,8 +301,8 @@
 		9584A37E22BA0F3400DCECDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				950C9D4422BB728E0032F43F /* API.swift */,
-				950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */,
+				95064ED722BCAED200B2DF48 /* Swizzer.swift */,
+				95064ED622BCAE1700B2DF48 /* Network */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -426,6 +439,7 @@
 			children = (
 				9584A3B722BA292B00DCECDB /* PushNotificationsAppDelegate.swift */,
 				9584A3B922BA297E00DCECDB /* ThirdPartiesConfiguratorAppDelegate.swift */,
+				95064ED422BCAD4100B2DF48 /* ViewControllerDelegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -672,6 +686,8 @@
 				9584A3A322BA115F00DCECDB /* UIBarButtonItem+Utils.swift in Sources */,
 				9584A3C322BA312700DCECDB /* BaseBackWebviewController.swift in Sources */,
 				9584A3B822BA292B00DCECDB /* PushNotificationsAppDelegate.swift in Sources */,
+				95064ED822BCAED200B2DF48 /* Swizzer.swift in Sources */,
+				95064ED522BCAD4100B2DF48 /* ViewControllerDelegate.swift in Sources */,
 				9584A3A122BA115F00DCECDB /* NSObject+Notification.swift in Sources */,
 				9584A3A922BA115F00DCECDB /* UIView+Gesture.swift in Sources */,
 				95064ED122BCA89300B2DF48 /* MainCollectionViewCell.swift in Sources */,
