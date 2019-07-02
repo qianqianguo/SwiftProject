@@ -10,6 +10,8 @@ target 'SwiftProject' do
   pod 'SnapKit', '~> 4.2.0'
   ##图片加载
   pod 'Kingfisher', '~> 4.6.0'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'MJRefresh', '~> 3.2.0'
   
   target 'SwiftProjectTests' do
     inherit! :search_paths

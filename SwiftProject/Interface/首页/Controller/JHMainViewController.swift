@@ -21,12 +21,15 @@ class JHMainViewController: JHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        MBProgressHUD.showActivityMessage("加载中...")
         viewModel.getNews().subscribe(onNext: { (newsModel) in
             self.news = newsModel ;
           
         }, onError: { (error) in
+             MBProgressHUD.hideHUDForView()
              print(error)
         }, onCompleted: {
+            MBProgressHUD.hideHUDForView()
            self.collectionView?.reloadData()
         })
     }
@@ -35,18 +38,31 @@ class JHMainViewController: JHBaseViewController {
         self.title = "首页"
         
         layout = MainCollectionViewFlowLayout()
-        layout?.itemSize = CGSize(width: Screen.Width, height:80)
+        layout?.itemSize = CGSize(width: JHFrameTool.screenWidth(), height:80)
         
-        let rect = CGRect(x: 0, y:StatusBarAndNavigationBarHeight, width:Screen.Width, height:Screen.Height-StatusBarAndNavigationBarHeight-TabbarHeight)
+        let rect = CGRect(x: 0, y:JHFrameTool.navigationBarAndstatusBarHeight(), width: JHFrameTool.screenWidth(), height:JHFrameTool.screenHeight()-JHFrameTool.navigationBarAndstatusBarHeight()-JHFrameTool.tabBarHeight())
         collectionView = UICollectionView(frame: rect, collectionViewLayout: layout!)
-        collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.bounces = false
         collectionView?.register(MainCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
         collectionView?.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
         view.addSubview(collectionView!)
+        collectionView?.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
+            MBProgressHUD.showActivityMessage("加载中...")
+            self.viewModel.getNews().subscribe(onNext: { (newsModel) in
+                self.collectionView?.mj_header.endRefreshing()
+                self.news = newsModel ;
+                
+            }, onError: { (error) in
+                MBProgressHUD.hideHUDForView()
+                print(error)
+            }, onCompleted: {
+                MBProgressHUD.hideHUDForView()
+                self.collectionView?.reloadData()
+            })
+        })
+       
 
         
     }
@@ -127,7 +143,7 @@ extension JHMainViewController:UIViewControllerPreviewingDelegate{
         //        vc.preferredContentSize = CGSize(width: 0, height: 0)
         
         //调整不被虚化的范围，按压的那个cell不被虚化（轻轻按压时周边会被虚化，再少用力展示预览，再加力跳页至设定界面）
-        let rect = CGRect(x: 0, y: 0, width: Screen.Width, height: 80)
+        let rect = CGRect(x: 0, y: 0, width:  JHFrameTool.screenWidth(), height: 80)
         //设置触发操作的视图的不被虚化的区域
         previewingContext.sourceRect = rect
         
