@@ -13,20 +13,20 @@ extension MBProgressHUD{
     class func showError(_ error: String?, to view: UIView?) {
         self.show(error, icon: "error", view: view)
     }
-    
+    // MARK: 显示成功信息
     class func showSuccess(_ success: String?, to view: UIView?) {
         self.show(success, icon: "success.png", view: view)
     }
-    
+    // MARK: 显示加载中
     class func showActivityMessage(_ message:String?){
         self.showActivityMessage(message, view: nil)
     }
-    
+    // MARK: 显示错误信息
     class func showError(_ error: String?) {
         self.showError(error, to: nil)
         
     }
-    
+    // MARK: 显示成功信息
     class func showSuccess(_ success: String?) {
         self.showSuccess(success, to: nil)
     }
@@ -35,7 +35,7 @@ extension MBProgressHUD{
     
 }
 extension MBProgressHUD{
-
+    
     // MARK: 显示信息
     class func show(_ text: String?, icon: String?, view: UIView?) {
         var blockView: UIView? = view
@@ -109,12 +109,13 @@ extension MBProgressHUD{
     }
     
     class func hideHUDForView(_ view:UIView?, animated:Bool){
-            var blockView: UIView? = view
+        var blockView: UIView? = view
         DispatchQueue.main.async(execute: {
             if blockView == nil {
                 blockView = UIApplication.shared.windows.last
             }
-           self.hide(for: (blockView ?? nil)!, animated: animated)
+            self.hide(for: (blockView ?? nil)!, animated: animated)
         })
     }
 }
+
