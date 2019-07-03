@@ -14,9 +14,9 @@ class JHPayManager: NSObject,WXApiDelegate {
         case wxsuccess = 1001 //*< 成功
         case wxerror = 1002 //*< 失败
         case wxcancel = 1003 //*< 取消
-        case wxerror_NOTINSTALL = 1004 //*< 未安装微信
-        case wxerror_UNSUPPORT = 1005 //*< 微信不支持
-        case wxerror_PARAM = 1006 //*< 支付参数解析错误
+        case wxerror_notinstall = 1004 //*< 未安装微信
+        case wxerror_unsupport = 1005 //*< 微信不支持
+        case wxerror_params = 1006 //*< 支付参数解析错误
         case alipaysucess = 1101 //*< 支付宝支付成功
         case alipayerror = 1102 //*< 支付宝支付错误
         case alipaycancel = 1103 //*< 支付宝支付取消
@@ -150,7 +150,7 @@ extension JHPayManager{
         }
     }
     //微信认证
-   public func WXLogin(params:String?,success:@escaping(_ code: PayCode, _ authCode: String?) -> Void,failure:@escaping(_ code: PayCode) -> Void){
+   public func WXLogin(success:@escaping(_ code: PayCode, _ authCode: String?) -> Void,failure:@escaping(_ code: PayCode) -> Void){
         self.authSuccess = success
         self.payError = failure
         if WXApi.isWXAppInstalled() {
