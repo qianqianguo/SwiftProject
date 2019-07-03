@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - AlipaySDK-iOS (15.5.9)
   - Kingfisher (4.6.4)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.2.0)
@@ -13,18 +14,22 @@ PODS:
   - Result (4.1.0)
   - RxSwift (4.5.0)
   - SnapKit (4.2.0)
+  - WechatOpenSDK (1.8.4)
 
 DEPENDENCIES:
+  - AlipaySDK-iOS
   - Kingfisher (~> 4.6.0)
   - MBProgressHUD (~> 1.1.0)
   - MJRefresh (~> 3.2.0)
   - Moya/RxSwift (~> 12.0.1)
   - ObjectMapper (~> 3.3.0)
   - SnapKit (~> 4.2.0)
+  - WechatOpenSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlipaySDK-iOS
     - Kingfisher
     - MBProgressHUD
     - MJRefresh
@@ -33,9 +38,11 @@ SPEC REPOS:
     - Result
     - RxSwift
     - SnapKit
+    - WechatOpenSDK
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
@@ -44,7 +51,8 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
 
-PODFILE CHECKSUM: 4e21e0356c9b57d9c504e585161ea5b3c99159b1
+PODFILE CHECKSUM: e9fff98de847d983a959e032993450dd8a08e18f
 
 COCOAPODS: 1.7.3

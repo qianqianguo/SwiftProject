@@ -8,10 +8,13 @@ target 'SwiftProject' do
   pod 'Moya/RxSwift', '~> 12.0.1'
   pod 'ObjectMapper', '~> 3.3.0'
   pod 'SnapKit', '~> 4.2.0'
-  ##图片加载
+  #图片加载
   pod 'Kingfisher', '~> 4.6.0'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'MJRefresh', '~> 3.2.0'
+  #支付
+  pod 'AlipaySDK-iOS'
+  pod 'WechatOpenSDK'
   
   target 'SwiftProjectTests' do
     inherit! :search_paths

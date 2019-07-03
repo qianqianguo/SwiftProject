@@ -32,6 +32,12 @@ class JHMainViewController: JHBaseViewController {
             MBProgressHUD.hideHUDForView()
            self.collectionView?.reloadData()
         })
+        
+        JHPayManager.shared.AliPay(params: "", success: { code in
+            print(code);
+        }) { errorCode  in
+           print(errorCode);
+        }
     }
     private func setupUI(){
         
@@ -79,8 +85,6 @@ extension JHMainViewController:UICollectionViewDataSource {
             cell.imgView.kf.setImage(with:URL(string:news?.images?.safeIndex(i: 0) ?? ""))
             cell.titleLab.text = news?.title
         }
-        //注册Peek & Pop功能
-        registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: cell)
         return cell
     }
     
@@ -123,39 +127,5 @@ extension JHMainViewController:UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
     }
     
-    
-}
-// MARK: - UIViewControllerPreviewingDelegate
-extension JHMainViewController:UIViewControllerPreviewingDelegate{
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        //1. 获取按压的cell所在的行
-        guard let cell = previewingContext.sourceView as? UICollectionViewCell else { return UIViewController() }
-        
-        let indexPath = collectionView?.indexPath(for: cell)
-        
-        
-        
-        //2. 设定预览界面
-        //        let vc = BaseBackWebviewController.init(news?.body ?? "")
-        let  vc = JHMainViewController.init()
-        // 预览区域大小(可不设置), 0为默认尺寸
-        //        vc.preferredContentSize = CGSize(width: 0, height: 0)
-        
-        //调整不被虚化的范围，按压的那个cell不被虚化（轻轻按压时周边会被虚化，再少用力展示预览，再加力跳页至设定界面）
-        let rect = CGRect(x: 0, y: 0, width:  JHFrameTool.screenWidth(), height: 80)
-        //设置触发操作的视图的不被虚化的区域
-        previewingContext.sourceRect = rect
-        
-        //返回预览界面
-        return vc
-    }
-    
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        viewControllerToCommit.hidesBottomBarWhenPushed = true
-        show(viewControllerToCommit, sender: self)
-    }
     
 }

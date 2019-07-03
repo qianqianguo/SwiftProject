@@ -20,6 +20,8 @@
 		950C9D4722BB74360032F43F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4622BB74360032F43F /* Macros.swift */; };
 		950C9D4922BB78520032F43F /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */; };
 		950C9D4B22BB7D480032F43F /* JHMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4A22BB7D480032F43F /* JHMainViewController.swift */; };
+		955FC84322CC5842001073B4 /* JHPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FC84222CC5842001073B4 /* JHPayManager.swift */; };
+		955FC84522CC9450001073B4 /* PayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FC84422CC9450001073B4 /* PayDelegate.swift */; };
 		9584A35422BA0AF600DCECDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35222BA0AF600DCECDB /* Main.storyboard */; };
 		9584A35622BA0AFD00DCECDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35522BA0AFD00DCECDB /* Assets.xcassets */; };
 		9584A35922BA0AFD00DCECDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35722BA0AFD00DCECDB /* LaunchScreen.storyboard */; };
@@ -87,6 +89,8 @@
 		950C9D4622BB74360032F43F /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		950C9D4822BB78520032F43F /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		950C9D4A22BB7D480032F43F /* JHMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHMainViewController.swift; sourceTree = "<group>"; };
+		955FC84222CC5842001073B4 /* JHPayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHPayManager.swift; sourceTree = "<group>"; };
+		955FC84422CC9450001073B4 /* PayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDelegate.swift; sourceTree = "<group>"; };
 		9584A34B22BA0AF600DCECDB /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9584A35322BA0AF600DCECDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9584A35522BA0AFD00DCECDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 		9584A37E22BA0F3400DCECDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				955FC84222CC5842001073B4 /* JHPayManager.swift */,
 				95A2EE4122CB4E78006115F6 /* JHFrameTool.swift */,
 				95064ED722BCAED200B2DF48 /* Swizzer.swift */,
 				95064ED622BCAE1700B2DF48 /* Network */,
@@ -450,6 +455,7 @@
 				9584A3B722BA292B00DCECDB /* PushNotificationsAppDelegate.swift */,
 				9584A3B922BA297E00DCECDB /* ThirdPartiesConfiguratorAppDelegate.swift */,
 				95064ED422BCAD4100B2DF48 /* ViewControllerDelegate.swift */,
+				955FC84422CC9450001073B4 /* PayDelegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				9584A34822BA0AF600DCECDB /* Frameworks */,
 				9584A34922BA0AF600DCECDB /* Resources */,
 				F084E63AC2629AC7B4F21F7F /* [CP] Embed Pods Frameworks */,
+				BC3D175679EB98B0E7C09DBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -659,6 +666,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BC3D175679EB98B0E7C09DBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftProject/Pods-SwiftProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftProject/Pods-SwiftProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftProject/Pods-SwiftProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E638CAFC2243F6B072C9CF2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -703,6 +727,8 @@
 			files = (
 				95064ECD22BC855A00B2DF48 /* MianViewModel.swift in Sources */,
 				950C9D4522BB728E0032F43F /* API.swift in Sources */,
+				955FC84522CC9450001073B4 /* PayDelegate.swift in Sources */,
+				955FC84322CC5842001073B4 /* JHPayManager.swift in Sources */,
 				9584A3A322BA115F00DCECDB /* UIBarButtonItem+Utils.swift in Sources */,
 				9584A3C322BA312700DCECDB /* BaseBackWebviewController.swift in Sources */,
 				9584A3B822BA292B00DCECDB /* PushNotificationsAppDelegate.swift in Sources */,

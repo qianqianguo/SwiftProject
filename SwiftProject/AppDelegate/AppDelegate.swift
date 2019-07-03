@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ViewControllerDelegate(),
                 PushNotificationsAppDelegate(),
                 ThirdPartiesConfiguratorAppDelegate(),
+                PayDelegate(),
                 ]
             )
         }
@@ -62,6 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     appDelegate.application?(application, performActionFor: shortcutItem, completionHandler: completionHandler)
         
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool{
+      _ = appDelegate.application?(app, open: url, options: options)
+        return true
     }
     
 }
