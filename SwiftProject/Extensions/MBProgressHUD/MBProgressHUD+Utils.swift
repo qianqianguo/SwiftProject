@@ -60,7 +60,6 @@ extension MBProgressHUD{
         
     }
     
-    
     // MARK: 显示一些信息
     class func showMessage(_ message: String?, to view: UIView?) {
         var blockView: UIView? = view

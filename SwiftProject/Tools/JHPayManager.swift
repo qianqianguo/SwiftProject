@@ -21,12 +21,10 @@ class JHPayManager: NSObject,WXApiDelegate {
         case alipayerror = 1102 //*< 支付宝支付错误
         case alipaycancel = 1103 //*< 支付宝支付取消
     }
-    
     static let shared = JHPayManager()
     fileprivate var paySuccess: ((_ code: PayCode) -> Void)?
     fileprivate var payError: ((_ code: PayCode) -> Void)?
     fileprivate var authSuccess: ((_ code: PayCode, _ authCode: String?) -> Void)?
-    
     
     ///回调处理
     func handleOpen(_ url: URL?) -> Bool {
@@ -48,7 +46,6 @@ class JHPayManager: NSObject,WXApiDelegate {
                     self.paySuccess?(.alipayerror)
                 }
             })
-            
             // 授权跳转支付宝钱包进行支付，处理支付结果
             AlipaySDK.defaultService().processAuth_V2Result(url, standbyCallback: { resultDic in
                 if let resultDic = resultDic {
@@ -70,17 +67,15 @@ class JHPayManager: NSObject,WXApiDelegate {
                 print("授权结果 authCode = \(authCode ?? "")")
             })
             return true
-            
         }
         return WXApi.handleOpen(url!, delegate: self)
     }
-    
     
 }
 //MARK: 支付宝支付
 extension JHPayManager
 {
-   public func AliPay(params:String?,success:@escaping(_ code:PayCode) -> Void,failure:@escaping(_ code: PayCode) -> Void){
+    public func AliPay(params:String?,success:@escaping(_ code:PayCode) -> Void,failure:@escaping(_ code: PayCode) -> Void){
         self.paySuccess = success ;
         self.payError = failure ;
         //回调地址
@@ -98,16 +93,13 @@ extension JHPayManager
                 failure(.alipayerror)
                 break
             }
-            
         }
     }
-    
-    
 }
 //MARK: 微信支付
 extension JHPayManager{
     //Mark: 微信支付
-   public func WXPay(params:String?,success:@escaping(_ code:PayCode) -> Void,failure:@escaping(_ code: PayCode) -> Void){
+    public func WXPay(params:String?,success:@escaping(_ code:PayCode) -> Void,failure:@escaping(_ code: PayCode) -> Void){
         self.paySuccess = success ;
         self.payError = failure ;
         //解析JsonString
@@ -150,7 +142,7 @@ extension JHPayManager{
         }
     }
     //微信认证
-   public func WXLogin(success:@escaping(_ code: PayCode, _ authCode: String?) -> Void,failure:@escaping(_ code: PayCode) -> Void){
+    public func WXLogin(success:@escaping(_ code: PayCode, _ authCode: String?) -> Void,failure:@escaping(_ code: PayCode) -> Void){
         self.authSuccess = success
         self.payError = failure
         if WXApi.isWXAppInstalled() {
@@ -170,7 +162,6 @@ extension JHPayManager{
         req.state = "login"
         WXApi.send(req)
     }
-    
     
     //Mark: 微信处理回调
     func onResp(_ resp: BaseResp) {
@@ -205,5 +196,3 @@ extension JHPayManager{
         
     }
 }
-
-

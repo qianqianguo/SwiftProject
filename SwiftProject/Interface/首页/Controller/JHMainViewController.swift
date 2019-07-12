@@ -32,12 +32,6 @@ class JHMainViewController: JHBaseViewController {
             MBProgressHUD.hideHUDForView()
            self.collectionView?.reloadData()
         })
-        
-        JHPayManager.shared.AliPay(params: "", success: { code in
-            print(code);
-        }) { errorCode  in
-           print(errorCode);
-        }
     }
     private func setupUI(){
         
@@ -45,7 +39,6 @@ class JHMainViewController: JHBaseViewController {
         
         layout = MainCollectionViewFlowLayout()
         layout?.itemSize = CGSize(width: JHFrameTool.screenWidth(), height:80)
-        
         let rect = CGRect(x: 0, y:JHFrameTool.navigationBarAndstatusBarHeight(), width: JHFrameTool.screenWidth(), height:JHFrameTool.screenHeight()-JHFrameTool.navigationBarAndstatusBarHeight()-JHFrameTool.tabBarHeight())
         collectionView = UICollectionView(frame: rect, collectionViewLayout: layout!)
         collectionView?.delegate = self

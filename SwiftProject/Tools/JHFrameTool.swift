@@ -18,13 +18,12 @@ class JHFrameTool: NSObject {
             return iPhoneXSeries
         }
         
-        if #available(iOS 11.0, *) {
+       if #available(iOS 11.0, *) {
             let mainWindow: UIWindow? = UIApplication.shared.delegate?.window ?? nil
             if (mainWindow?.safeAreaInsets.bottom ?? 0.0) > 0.0 {
                 iPhoneXSeries = true
             }
         }
-        
         return iPhoneXSeries
     }
     
@@ -64,6 +63,3 @@ class JHFrameTool: NSObject {
         return UIScreen.main.bounds.size.height / 667.00
     }
 }
-
-
-

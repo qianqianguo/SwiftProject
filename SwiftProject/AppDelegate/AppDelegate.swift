@@ -34,11 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        appDelegate.application?(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-    }
-    
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         appDelegate.applicationDidBecomeActive?(application)
     }
@@ -68,6 +64,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool{
       _ = appDelegate.application?(app, open: url, options: options)
         return true
+    }
+   
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        appDelegate.application?(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+          _ = appDelegate.application?(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+        completionHandler(.newData)
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        _ = appDelegate.application?(application, didReceiveRemoteNotification:userInfo)
     }
     
 }

@@ -26,7 +26,6 @@ extension API:TargetType{
         return URLEncoding.default
     }
     
-    
     var baseURL: URL {
         return URL(string: MyBaseUrl)!
     }

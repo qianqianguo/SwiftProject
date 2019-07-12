@@ -13,6 +13,7 @@ protocol SelfAware: class {
     
     static func awake()
     static func swizzlingForClass(_ forClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector)
+
 }
 
 extension SelfAware {

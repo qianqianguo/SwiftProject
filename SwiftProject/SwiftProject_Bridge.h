@@ -12,5 +12,5 @@
 #import "MJRefresh.h"
 #import "WXApi.h"
 #import "AlipaySDK/AlipaySDK.h"
-
+#import "JPUSHService.h"
 #endif /* SwiftProject_Bridge_h */

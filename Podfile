@@ -15,7 +15,8 @@ target 'SwiftProject' do
   #支付
   pod 'AlipaySDK-iOS'
   pod 'WechatOpenSDK'
-  
+  #推送
+  pod 'JPush'
   target 'SwiftProjectTests' do
     inherit! :search_paths
     # Pods for testing
