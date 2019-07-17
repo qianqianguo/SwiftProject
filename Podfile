@@ -17,6 +17,7 @@ target 'SwiftProject' do
   pod 'WechatOpenSDK'
   #推送
   pod 'JPush'
+  
   target 'SwiftProjectTests' do
     inherit! :search_paths
     # Pods for testing

@@ -22,6 +22,14 @@
 		950C9D4B22BB7D480032F43F /* JHMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C9D4A22BB7D480032F43F /* JHMainViewController.swift */; };
 		955FC84322CC5842001073B4 /* JHPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FC84222CC5842001073B4 /* JHPayManager.swift */; };
 		955FC84522CC9450001073B4 /* PayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FC84422CC9450001073B4 /* PayDelegate.swift */; };
+		9568C75522DEF51C00187AD5 /* JHScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C74E22DEF51B00187AD5 /* JHScanLineAnimation.swift */; };
+		9568C75622DEF51C00187AD5 /* JHScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C74F22DEF51B00187AD5 /* JHScanWrapper.swift */; };
+		9568C75722DEF51C00187AD5 /* JHScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75022DEF51C00187AD5 /* JHScanViewController.swift */; };
+		9568C75822DEF51C00187AD5 /* JHPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75122DEF51C00187AD5 /* JHPermissions.swift */; };
+		9568C75922DEF51C00187AD5 /* JHScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75222DEF51C00187AD5 /* JHScanViewStyle.swift */; };
+		9568C75A22DEF51C00187AD5 /* JHScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75322DEF51C00187AD5 /* JHScanView.swift */; };
+		9568C75B22DEF51C00187AD5 /* JHScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75422DEF51C00187AD5 /* JHScanNetAnimation.swift */; };
+		9568C75D22DEF64700187AD5 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9568C75C22DEF64600187AD5 /* CodeScan.bundle */; };
 		9584A35422BA0AF600DCECDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35222BA0AF600DCECDB /* Main.storyboard */; };
 		9584A35622BA0AFD00DCECDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35522BA0AFD00DCECDB /* Assets.xcassets */; };
 		9584A35922BA0AFD00DCECDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35722BA0AFD00DCECDB /* LaunchScreen.storyboard */; };
@@ -91,6 +99,14 @@
 		950C9D4A22BB7D480032F43F /* JHMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHMainViewController.swift; sourceTree = "<group>"; };
 		955FC84222CC5842001073B4 /* JHPayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHPayManager.swift; sourceTree = "<group>"; };
 		955FC84422CC9450001073B4 /* PayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDelegate.swift; sourceTree = "<group>"; };
+		9568C74E22DEF51B00187AD5 /* JHScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanLineAnimation.swift; sourceTree = "<group>"; };
+		9568C74F22DEF51B00187AD5 /* JHScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanWrapper.swift; sourceTree = "<group>"; };
+		9568C75022DEF51C00187AD5 /* JHScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanViewController.swift; sourceTree = "<group>"; };
+		9568C75122DEF51C00187AD5 /* JHPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPermissions.swift; sourceTree = "<group>"; };
+		9568C75222DEF51C00187AD5 /* JHScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanViewStyle.swift; sourceTree = "<group>"; };
+		9568C75322DEF51C00187AD5 /* JHScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanView.swift; sourceTree = "<group>"; };
+		9568C75422DEF51C00187AD5 /* JHScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanNetAnimation.swift; sourceTree = "<group>"; };
+		9568C75C22DEF64600187AD5 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		9584A34B22BA0AF600DCECDB /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9584A35322BA0AF600DCECDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9584A35522BA0AFD00DCECDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +252,21 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		9568C74D22DEF4FB00187AD5 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				9568C75C22DEF64600187AD5 /* CodeScan.bundle */,
+				9568C75122DEF51C00187AD5 /* JHPermissions.swift */,
+				9568C74E22DEF51B00187AD5 /* JHScanLineAnimation.swift */,
+				9568C75422DEF51C00187AD5 /* JHScanNetAnimation.swift */,
+				9568C75322DEF51C00187AD5 /* JHScanView.swift */,
+				9568C75022DEF51C00187AD5 /* JHScanViewController.swift */,
+				9568C75222DEF51C00187AD5 /* JHScanViewStyle.swift */,
+				9568C74F22DEF51B00187AD5 /* JHScanWrapper.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		9584A34222BA0AF600DCECDB = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +346,7 @@
 		9584A37E22BA0F3400DCECDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9568C74D22DEF4FB00187AD5 /* QRCode */,
 				955FC84222CC5842001073B4 /* JHPayManager.swift */,
 				95A2EE4122CB4E78006115F6 /* JHFrameTool.swift */,
 				95064ED722BCAED200B2DF48 /* Swizzer.swift */,
@@ -574,7 +606,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 0;
@@ -616,6 +648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9568C75D22DEF64700187AD5 /* CodeScan.bundle in Resources */,
 				9584A35922BA0AFD00DCECDB /* LaunchScreen.storyboard in Resources */,
 				95A2EE4A22CB6928006115F6 /* MBProgressHUD.bundle in Resources */,
 				9584A35622BA0AFD00DCECDB /* Assets.xcassets in Resources */,
@@ -738,7 +771,9 @@
 				95064ECD22BC855A00B2DF48 /* MianViewModel.swift in Sources */,
 				950C9D4522BB728E0032F43F /* API.swift in Sources */,
 				955FC84522CC9450001073B4 /* PayDelegate.swift in Sources */,
+				9568C75A22DEF51C00187AD5 /* JHScanView.swift in Sources */,
 				955FC84322CC5842001073B4 /* JHPayManager.swift in Sources */,
+				9568C75822DEF51C00187AD5 /* JHPermissions.swift in Sources */,
 				9584A3A322BA115F00DCECDB /* UIBarButtonItem+Utils.swift in Sources */,
 				9584A3C322BA312700DCECDB /* BaseBackWebviewController.swift in Sources */,
 				9584A3B822BA292B00DCECDB /* PushNotificationsAppDelegate.swift in Sources */,
@@ -751,6 +786,7 @@
 				9584A38822BA109C00DCECDB /* JHBaseTabBarController.swift in Sources */,
 				9584A3A022BA115F00DCECDB /* Collection+Extension.swift in Sources */,
 				950C9D4722BB74360032F43F /* Macros.swift in Sources */,
+				9568C75722DEF51C00187AD5 /* JHScanViewController.swift in Sources */,
 				950C9D4B22BB7D480032F43F /* JHMainViewController.swift in Sources */,
 				9584A3BA22BA297E00DCECDB /* ThirdPartiesConfiguratorAppDelegate.swift in Sources */,
 				9584A3A522BA115F00DCECDB /* UIButton+EdgeInset.swift in Sources */,
@@ -763,12 +799,16 @@
 				9584A38422BA105700DCECDB /* JHBaseViewController.swift in Sources */,
 				95064ED222BCA89300B2DF48 /* MainCollectionViewFlowLayout.swift in Sources */,
 				9584A3AA22BA115F00DCECDB /* UIView+ParentController.swift in Sources */,
+				9568C75622DEF51C00187AD5 /* JHScanWrapper.swift in Sources */,
 				9584A3A822BA115F00DCECDB /* UIView+Frame.swift in Sources */,
+				9568C75922DEF51C00187AD5 /* JHScanViewStyle.swift in Sources */,
 				9584A3A722BA115F00DCECDB /* UIImage+Utils.swift in Sources */,
 				9584A3B422BA1B5E00DCECDB /* AppDelegateType.swift in Sources */,
 				95064EC722BC82DD00B2DF48 /* NewsModel.swift in Sources */,
+				9568C75522DEF51C00187AD5 /* JHScanLineAnimation.swift in Sources */,
 				9584A3B522BA1B5E00DCECDB /* AppDelegate.swift in Sources */,
 				9584A3C422BA312700DCECDB /* BaseWebviewController.swift in Sources */,
+				9568C75B22DEF51C00187AD5 /* JHScanNetAnimation.swift in Sources */,
 				9584A3A622BA115F00DCECDB /* UIColor+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

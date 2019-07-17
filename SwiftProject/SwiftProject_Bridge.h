@@ -8,9 +8,11 @@
 
 #ifndef SwiftProject_Bridge_h
 #define SwiftProject_Bridge_h
+
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
 #import "WXApi.h"
 #import "AlipaySDK/AlipaySDK.h"
 #import "JPUSHService.h"
+
 #endif /* SwiftProject_Bridge_h */

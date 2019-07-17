@@ -21,17 +21,8 @@ class JHMainViewController: JHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        MBProgressHUD.showActivityMessage("加载中...")
-        viewModel.getNews().subscribe(onNext: { (newsModel) in
-            self.news = newsModel ;
-          
-        }, onError: { (error) in
-             MBProgressHUD.hideHUDForView()
-             print(error)
-        }, onCompleted: {
-            MBProgressHUD.hideHUDForView()
-           self.collectionView?.reloadData()
-        })
+        self.setRightItem()
+        self.getListData()
     }
     private func setupUI(){
         
@@ -48,24 +39,31 @@ class JHMainViewController: JHBaseViewController {
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
         view.addSubview(collectionView!)
         collectionView?.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
-            MBProgressHUD.showActivityMessage("加载中...")
-            self.viewModel.getNews().subscribe(onNext: { (newsModel) in
-                self.collectionView?.mj_header.endRefreshing()
-                self.news = newsModel ;
-                
-            }, onError: { (error) in
-                MBProgressHUD.hideHUDForView()
-                print(error)
-            }, onCompleted: {
-                MBProgressHUD.hideHUDForView()
-                self.collectionView?.reloadData()
-            })
+            self.getListData()
         })
        
 
         
     }
-
+    private func getListData(){
+        MBProgressHUD.showActivityMessage("加载中...")
+        self.viewModel.getNews().subscribe(onNext: { (newsModel) in
+            self.collectionView?.mj_header.endRefreshing()
+            self.news = newsModel ;
+            
+        }, onError: { (error) in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+                MBProgressHUD.hideHUDForView()
+            })
+            print(error)
+        }, onCompleted: {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+               MBProgressHUD.hideHUDForView()
+            })
+           
+            self.collectionView?.reloadData()
+        })
+    }
 }
 // MARK: - UICollectionViewDataSource
 extension JHMainViewController:UICollectionViewDataSource {
@@ -121,4 +119,41 @@ extension JHMainViewController:UICollectionViewDelegateFlowLayout {
     }
     
     
+}
+//MARK:二维码扫描
+extension JHMainViewController:JHScanViewControllerDelegate{
+    
+    func scanFinished(scanResult: JHScanResult, error: String?) {
+    
+        guard let result = scanResult.strScanned else {
+            print("扫描结果:为空!")
+            return
+        }
+        print("扫描结果:\(result)")
+    }
+    
+    func configScanStyle() {
+        //设置扫码区域参数
+        var style = JHScanViewStyle()
+    
+        style.anmiationStyle = JHScanViewAnimationStyle.LineMove
+        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_light_green")
+        
+        let vc = JHScanViewController()
+        vc.scanStyle = style
+        vc.scanResultDelegate = self ;
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    fileprivate func setRightItem(){
+        let button = UIButton.init(type: .custom)
+        button.setImage(UIImage.init(named:"QRcode"), for: UIControl.State.normal)
+        button.addTouchUpInsideAction { (button) in
+            self.configScanStyle()
+        }
+        let rightItem = UIBarButtonItem.init(customView: button)
+        self.navigationItem.rightBarButtonItem = rightItem ;
+        
+    }
 }

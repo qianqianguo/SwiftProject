@@ -20,12 +20,14 @@ class PushNotificationsAppDelegate: AppDelegateType{
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        handleRemoteNotification(userInfo)
         JPUSHService.handleRemoteNotification(userInfo)
         completionHandler(.newData)
         
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        handleRemoteNotification(userInfo)
         JPUSHService.handleRemoteNotification(userInfo)
     }
     
@@ -48,7 +50,7 @@ class PushNotificationsAppDelegate: AppDelegateType{
                 UIRemoteNotificationType.alert.rawValue
             JPUSHService.register(forRemoteNotificationTypes: type, categories: nil)
         }
-        
+        //MARK: 这里添加APPKEY
         JPUSHService.setup(withOption: launchOptions, appKey:"", channel: "Publish channel", apsForProduction: true)
         
     }
@@ -63,6 +65,7 @@ extension PushNotificationsAppDelegate:JPUSHRegisterDelegate
         let userInfo = notification.request.content.userInfo
         if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
             handleRemoteNotification(userInfo)
+            JPUSHService.handleRemoteNotification(userInfo)
         }
         completionHandler(Int(UNAuthorizationOptions.alert.rawValue))// 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
     }
@@ -73,6 +76,7 @@ extension PushNotificationsAppDelegate:JPUSHRegisterDelegate
         let userInfo = response.notification.request.content.userInfo
         if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
             handleRemoteNotification(userInfo)
+            JPUSHService.handleRemoteNotification(userInfo)
         }
         completionHandler()
     }
@@ -83,11 +87,13 @@ extension PushNotificationsAppDelegate:JPUSHRegisterDelegate
         let userInfo = notification?.request.content.userInfo
         if (notification?.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
             handleRemoteNotification(userInfo)
+            JPUSHService.handleRemoteNotification(userInfo)
         }
         
     }
     func handleRemoteNotification(_ userInfo: [AnyHashable : Any]?) {
-        
+        //MARK: 处理推送消息
     }
 }
+
 
