@@ -30,6 +30,7 @@
 		9568C75A22DEF51C00187AD5 /* JHScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75322DEF51C00187AD5 /* JHScanView.swift */; };
 		9568C75B22DEF51C00187AD5 /* JHScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C75422DEF51C00187AD5 /* JHScanNetAnimation.swift */; };
 		9568C75D22DEF64700187AD5 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9568C75C22DEF64600187AD5 /* CodeScan.bundle */; };
+		9568C77022DF201E00187AD5 /* JHGeneralColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568C76F22DF201E00187AD5 /* JHGeneralColor.swift */; };
 		9584A35422BA0AF600DCECDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35222BA0AF600DCECDB /* Main.storyboard */; };
 		9584A35622BA0AFD00DCECDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35522BA0AFD00DCECDB /* Assets.xcassets */; };
 		9584A35922BA0AFD00DCECDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9584A35722BA0AFD00DCECDB /* LaunchScreen.storyboard */; };
@@ -107,6 +108,7 @@
 		9568C75322DEF51C00187AD5 /* JHScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanView.swift; sourceTree = "<group>"; };
 		9568C75422DEF51C00187AD5 /* JHScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHScanNetAnimation.swift; sourceTree = "<group>"; };
 		9568C75C22DEF64600187AD5 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		9568C76F22DF201E00187AD5 /* JHGeneralColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHGeneralColor.swift; sourceTree = "<group>"; };
 		9584A34B22BA0AF600DCECDB /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9584A35322BA0AF600DCECDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9584A35522BA0AFD00DCECDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		9584A37D22BA0EB900DCECDB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				9568C76F22DF201E00187AD5 /* JHGeneralColor.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				9584A3A222BA115F00DCECDB /* String+Utils.swift in Sources */,
 				9584A38422BA105700DCECDB /* JHBaseViewController.swift in Sources */,
 				95064ED222BCA89300B2DF48 /* MainCollectionViewFlowLayout.swift in Sources */,
+				9568C77022DF201E00187AD5 /* JHGeneralColor.swift in Sources */,
 				9584A3AA22BA115F00DCECDB /* UIView+ParentController.swift in Sources */,
 				9568C75622DEF51C00187AD5 /* JHScanWrapper.swift in Sources */,
 				9584A3A822BA115F00DCECDB /* UIView+Frame.swift in Sources */,

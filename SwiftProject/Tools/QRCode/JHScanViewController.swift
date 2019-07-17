@@ -18,7 +18,7 @@ public protocol QRRectDelegate {
     func drawwed()
 }
 
-open class JHScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+open class JHScanViewController: JHBaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
  //返回扫码结果，也可以通过继承本控制器，改写该handleCodeResult方法即可
    open weak var scanResultDelegate: JHScanViewControllerDelegate?

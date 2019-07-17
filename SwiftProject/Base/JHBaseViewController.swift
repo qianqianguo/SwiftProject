@@ -8,25 +8,27 @@
 
 import UIKit
 
-class JHBaseViewController: UIViewController {
+open class JHBaseViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = JHGeneralColor.themeBackColor()
+      
+        if let index = self.navigationController?.viewControllers.firstIndex(where: {$0.isEqual(self)}){
+            if index != 0{
+                self.configBackItem()
+            }
+        }
     }
-
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    fileprivate func configBackItem(){
+        let button = UIButton.init(type: UIButton.ButtonType.custom)
+        button.setImage(UIImage.init(named: "back_normal"), for: UIControl.State.normal)
+        button.setImage(UIImage.init(named: "back_highlight"), for: UIControl.State.highlighted)
+        button.addTouchUpInsideAction { (button) in
+         self.navigationController?.popViewController(animated: true)
+        }
+        
+        let backItem = UIBarButtonItem.init(customView: button)
+        self.navigationItem.leftBarButtonItem = backItem
     }
-    */
-
 }

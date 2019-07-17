@@ -27,8 +27,11 @@ class JHBaseTabBarController: UITabBarController {
         // 选中的颜色由tabbar的tintColor决定
         childVC?.tabBarItem.selectedImage = (UIImage(named: "\(imageName ?? "")_sel"))?.withRenderingMode(.alwaysOriginal)
         childVC?.tabBarItem.setTitleTextAttributes([
-            NSAttributedString.Key.foregroundColor: UIColor.init("#EE1B2B")
+            NSAttributedString.Key.foregroundColor:JHGeneralColor.tabBarTitleSelectedColor()
             ], for: .selected)
+        childVC?.tabBarItem.setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor:JHGeneralColor.tabBarTitleNormalColor()
+            ], for: .normal)
         childVC?.title = title
         var baseNav: JHBaseNavigationController? = nil
         if let childVC = childVC {
