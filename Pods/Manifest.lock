@@ -1,3 +1,58 @@
-PODFILE CHECKSUM: 2a46f65f9ff4bceebbd8d8c0017316b63d50e4bb
+PODS:
+  - Alamofire (4.9.1)
+  - AlipaySDK-iOS (15.6.8)
+  - Kingfisher (4.10.1)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.3.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.5.1)
+  - Result (4.1.0)
+  - RxSwift (4.5.0)
+  - SnapKit (4.2.0)
+  - WechatOpenSDK (1.8.6)
+
+DEPENDENCIES:
+  - AlipaySDK-iOS
+  - Kingfisher
+  - MBProgressHUD
+  - MJRefresh
+  - Moya/RxSwift
+  - ObjectMapper
+  - SnapKit
+  - WechatOpenSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlipaySDK-iOS
+    - Kingfisher
+    - MBProgressHUD
+    - MJRefresh
+    - Moya
+    - ObjectMapper
+    - Result
+    - RxSwift
+    - SnapKit
+    - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlipaySDK-iOS: 703a55774a37f412410ab04af96c011b91ec58cb
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
+
+PODFILE CHECKSUM: 64555e19d1b2fe5dc924070f09b590ca07f7ae3f
 
 COCOAPODS: 1.9.0.beta.2
