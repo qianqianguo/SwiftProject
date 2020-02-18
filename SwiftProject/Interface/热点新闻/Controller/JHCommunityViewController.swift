@@ -106,9 +106,11 @@ extension JHCommunityViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let news = self.hotNewsData?.safeIndex(i: indexPath.item)
-        let web = BaseBackWebviewController.init()
-        web.url = NSURL.init(string: news?.url ?? "") as URL?
-        self.navigationController?.pushViewController(web, animated: true)
+         let url  = NSURL.init(string: news?.url ?? "") as URL?
+        if let Url = url {
+            let web = BaseBackWebviewController.init(Url, backButtonTitle: "返回", closeButtonTitle: "关闭")
+            self.navigationController?.pushViewController(web, animated: true)
+        }
         
     }
 }
@@ -124,6 +126,7 @@ extension JHCommunityViewController:UICollectionViewDelegateFlowLayout {
     
     
 }
+
 
 
 

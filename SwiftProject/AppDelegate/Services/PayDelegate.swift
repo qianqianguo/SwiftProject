@@ -11,8 +11,9 @@ import UIKit
 class PayDelegate: AppDelegateType {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        JHPayManager.shared.handleOpen(url)
-        return true
+        
+        return JHPayManager.shared.handleOpen(url)
     }
     
 }
+

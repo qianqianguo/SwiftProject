@@ -8,4 +8,3 @@
 
 import Foundation
 
-let MyBaseUrl: String = "http://news-at.zhihu.com/api"
