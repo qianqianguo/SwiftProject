@@ -19,7 +19,7 @@ class JHBaseTabBarController: UITabBarController {
     func addChildViewControllers() {
         //图片大小建议32*32
         addChildrenViewController(JHMainViewController(), andTitle: "首页", andImageName: "main")
-        addChildrenViewController(JHBaseViewController(), andTitle: "社区", andImageName: "community")
+        addChildrenViewController(JHCommunityViewController(), andTitle: "新闻头条", andImageName: "community")
         addChildrenViewController(JHBaseViewController(), andTitle: "个人中心", andImageName: "mine")
     }
     func addChildrenViewController(_ childVC: UIViewController?, andTitle title: String?, andImageName imageName: String?) {

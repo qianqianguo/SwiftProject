@@ -13,6 +13,7 @@ import Alamofire
 
 enum API {
     case getNews
+    case getHotNews(String,String)
 }
 
 extension API:TargetType{
@@ -28,13 +29,21 @@ extension API:TargetType{
     
     
     var baseURL: URL {
-        return URL(string: MyBaseUrl)!
+        
+        switch self {
+               case .getNews:
+                 return URL(string: "http://news-at.zhihu.com/api")!
+        case .getHotNews(_,_):
+                return URL(string: "http://api.avatardata.cn/TouTiao/Query")!
+        }
     }
     
     var path: String {
         switch self {
         case .getNews:
             return "/4/news/latest"
+        case .getHotNews(_,_):
+            return ""
         }
     }
     
@@ -42,6 +51,8 @@ extension API:TargetType{
         switch self {
         case .getNews:
             return .get
+        case .getHotNews(_,_):
+           return .get
         }
     }
     
@@ -54,13 +65,18 @@ extension API:TargetType{
              */
         case .getNews:
             return nil
+            
+        case .getHotNews(let key,let type):
+            return ["key":key,"type":type]
         }
     }
     
     var sampleData: Data {
         switch self {
         case .getNews:
-            return "Login successfully".data(using: String.Encoding.utf8)!
+            return "News successfully".data(using: String.Encoding.utf8)!
+        case .getHotNews:
+             return "HotNews successfully".data(using: String.Encoding.utf8)!
         }
     }
     
@@ -73,3 +89,6 @@ extension API:TargetType{
     }
 }
     let provider = MoyaProvider<API>()
+
+
+

@@ -13,11 +13,37 @@ import RxSwift
 import Kingfisher
 
 class JHMainViewController: JHBaseViewController {
+    
     let viewModel = MianViewModel()
-    private var collectionView:UICollectionView?
-    private var layout:MainCollectionViewFlowLayout?
-    private var news:NewsModel?
+    fileprivate var layout:MainCollectionViewFlowLayout?
+    fileprivate var news:NewsModel?
     fileprivate let disposeBag = DisposeBag()
+    lazy var  collectionView:UICollectionView = {
+       
+        layout = MainCollectionViewFlowLayout()
+        layout?.itemSize = CGSize(width: JHFrameTool.screenWidth(), height:80)
+               
+               let rect = CGRect(x: 0, y:JHFrameTool.navigationBarAndstatusBarHeight(), width: JHFrameTool.screenWidth(), height:JHFrameTool.screenHeight()-JHFrameTool.navigationBarAndstatusBarHeight()-JHFrameTool.tabBarHeight())
+              let  collectionView = UICollectionView(frame: rect, collectionViewLayout: layout!)
+               collectionView.delegate = self
+               collectionView.dataSource = self
+               collectionView.register(MainCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
+               collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+               collectionView.backgroundColor = UIColor.groupTableViewBackground
+        collectionView.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
+                 
+                   self.viewModel.getNews().subscribe(onNext: { (newsModel) in
+                       self.news = newsModel ;
+                   }, onError: { (error) in
+                       print(error)
+                   }, onCompleted: {
+                    self.collectionView.mj_header?.endRefreshing()
+                    self.collectionView.reloadData()
+                   }).disposed(by: self.disposeBag)
+               })
+        view.addSubview(collectionView)
+        return collectionView ;
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +58,7 @@ class JHMainViewController: JHBaseViewController {
            
              print(error)
         }, onCompleted: {
-            self.collectionView?.reloadData()
+            self.collectionView.reloadData()
             }).disposed(by: disposeBag)
         
     }
@@ -40,31 +66,6 @@ class JHMainViewController: JHBaseViewController {
     private func setupUI(){
         
         self.title = "首页"
-        
-        layout = MainCollectionViewFlowLayout()
-        layout?.itemSize = CGSize(width: JHFrameTool.screenWidth(), height:80)
-        
-        let rect = CGRect(x: 0, y:JHFrameTool.navigationBarAndstatusBarHeight(), width: JHFrameTool.screenWidth(), height:JHFrameTool.screenHeight()-JHFrameTool.navigationBarAndstatusBarHeight()-JHFrameTool.tabBarHeight())
-        collectionView = UICollectionView(frame: rect, collectionViewLayout: layout!)
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
-        collectionView?.register(MainCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
-        collectionView?.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        collectionView?.backgroundColor = UIColor.groupTableViewBackground
-        view.addSubview(collectionView!)
-        collectionView?.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
-          
-            self.viewModel.getNews().subscribe(onNext: { (newsModel) in
-                self.collectionView?.mj_header?.endRefreshing()
-                self.news = newsModel ;
-            }, onError: { (error) in
-                print(error)
-            }, onCompleted: {
-                self.collectionView?.reloadData()
-            }).disposed(by: self.disposeBag)
-        })
-       
-
         
     }
 
@@ -124,4 +125,5 @@ extension JHMainViewController:UICollectionViewDelegateFlowLayout {
     
     
 }
+
 
