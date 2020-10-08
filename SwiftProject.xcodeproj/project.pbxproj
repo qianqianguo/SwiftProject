@@ -191,7 +191,6 @@
 			children = (
 				8CEB73FE23F135D300FDD3FE /* Model */,
 				8CEB73FD23F135C300FDD3FE /* ViewModel */,
-				8CEB73FC23F135BC00FDD3FE /* View */,
 				8CEB73FB23F135B100FDD3FE /* Controller */,
 			);
 			path = "热点新闻";
@@ -203,13 +202,6 @@
 				8CEB73FF23F1521800FDD3FE /* JHCommunityViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8CEB73FC23F135BC00FDD3FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8CEB73FD23F135C300FDD3FE /* ViewModel */ = {
@@ -318,9 +310,7 @@
 				9584A38222BA0F9200DCECDB /* Macros */,
 				9584A38122BA0F6A00DCECDB /* Base */,
 				9584A38022BA0F5500DCECDB /* AppDelegate */,
-				9584A37F22BA0F3B00DCECDB /* Vendors */,
 				9584A37E22BA0F3400DCECDB /* Tools */,
-				9584A37D22BA0EB900DCECDB /* General */,
 				9584A37C22BA0EAA00DCECDB /* Interface */,
 				9584A35222BA0AF600DCECDB /* Main.storyboard */,
 				9584A35522BA0AFD00DCECDB /* Assets.xcassets */,
@@ -358,13 +348,6 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		9584A37D22BA0EB900DCECDB /* General */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = General;
-			sourceTree = "<group>";
-		};
 		9584A37E22BA0F3400DCECDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,13 +357,6 @@
 				95064ED622BCAE1700B2DF48 /* Network */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		9584A37F22BA0F3B00DCECDB /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
 			sourceTree = "<group>";
 		};
 		9584A38022BA0F5500DCECDB /* AppDelegate */ = {
@@ -1009,7 +985,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/SwiftProject_Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1034,7 +1010,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/SwiftProject_Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
