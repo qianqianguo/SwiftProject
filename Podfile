@@ -10,6 +10,7 @@ target 'SwiftProject' do
   pod 'SnapKit'
   #图片加载
   pod 'Kingfisher'
+  
   pod 'MBProgressHUD'
   pod 'MJRefresh'
   #支付

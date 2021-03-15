@@ -114,7 +114,12 @@ extension MBProgressHUD{
         var blockView: UIView? = view
         DispatchQueue.main.async(execute: {
             if blockView == nil {
-                blockView = UIApplication.shared.windows.last
+                if #available(iOS 14.0, *) {
+                    blockView = UIApplication.shared.windows.first
+                }else{
+                    blockView = UIApplication.shared.keyWindow
+                }
+             
             }
             self.hide(for: (blockView ?? nil)!, animated: animated)
         })
